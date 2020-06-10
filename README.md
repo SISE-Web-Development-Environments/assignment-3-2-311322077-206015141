@@ -20,6 +20,7 @@ manage the sql tables scripts.
 
 link to API:
 https://app.swaggerhub.com/apis/edenmizrahi/tests/1.0.0
+The both files of the API are in " 3.1 API " folder.
 
 Yarden Schwartz 206015141
 Eden Mizrahi 311322077
