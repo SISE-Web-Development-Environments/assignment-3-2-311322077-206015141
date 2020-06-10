@@ -3,19 +3,19 @@
 # Server-side:
 The project has 3 modules :routes , modules and sql scripts 
 
-# routers:
+# Routers:
 The project has three routes:
 1. user-authentication: Manage the login, logout, register requests.
 2. profile: Manage the user information requests.
 3. recipes: Manage the spoonacular API recipes requests.
 
-# modules:
+# Modules:
 1.auth_utils-Implement the user spoonacular authentication functionality.
 2.DButils-Implement the DB queries functionality.
 3.profile_utils-Implement the user profile information functionality.
 4.search_recipes- Implement the API interface.
 
-# sqlScripts
+# SqlScripts
 manage the sql tables scripts.
 
 link to API:
