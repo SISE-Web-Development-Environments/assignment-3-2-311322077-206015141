@@ -29,13 +29,13 @@ const users_authentication = require("./routes/users_authentication");
 const profile = require("./routes/profile");
 const recipe = require("./routes/recipes");
 //#region cookie middleware
-
 const corsConfig = {
   origin: true,
   credentials: true,
 };
 app.use(cors(corsConfig));
 app.options("*", cors(corsConfig));
+
 //#endregion
 
 app.get("/", (req, res) => res.send("welcome"));
