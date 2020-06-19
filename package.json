@@ -1,6 +1,7 @@
 {
   "name": "assignment-3-2-311322077-206015141",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node code/main.js",
@@ -19,14 +20,5 @@
   "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edenmizrahi/Recipes.git"
-  },
-  "bugs": {
-    "url": "https://github.com/edenmizrahi/Recipes/issues"
-  },
-  "homepage": "https://github.com/edenmizrahi/Recipes#readme",
-  "description": ""
+  "license": "ISC"
 }
