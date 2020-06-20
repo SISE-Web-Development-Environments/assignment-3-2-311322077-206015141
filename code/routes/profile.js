@@ -38,6 +38,7 @@ router.get("/recipeInfo/:ids", async (req, res, next) => {
     //   .then((theResult) => {
     //     res.send(theResult[0]);
     //   })
+    console.log(req.params.ids);
     a = {
       "635342": {
         watched: true,
@@ -194,15 +195,43 @@ router.put("/familyRecipes/add", async (req, res, next) => {
 
 router.get("/familyRecipes/:ids", async (req, res, next) => {
   try {
-    idaArray = JSON.parse(req.params.ids);
-    promises = [];
-    idaArray.map((id) => {
-      promises.push(
-        profile_utils.getPersonalRecipesFullDetails(req.user, id, "family")
-      );
-    });
-    result = await Promise.all(promises);
-    res.send(JSON.stringify(result));
+    // idaArray = JSON.parse(req.params.ids);
+    // promises = [];
+    // idaArray.map((id) => {
+    //   promises.push(
+    //     profile_utils.getPersonalRecipesFullDetails(req.user, id, "family")
+    //   );
+    // });
+    // result = await Promise.all(promises);
+    // res.send(JSON.stringify(result));
+    a = [
+      {
+        recipe_id: 111,
+        title: "coscos",
+        image: "slkd",
+        duration: 10,
+        vegetarians: true,
+        vegan: true,
+        glutenFree: false,
+        ingredients: [
+          {
+            name: "cofee",
+            amount: 1,
+            unit: "cup",
+          },
+        ],
+        instructions: [
+          {
+            number: "1",
+            content: "take the milk",
+          },
+        ],
+        owner: "mother",
+        where: "kidush",
+        pictures: ["pic1", "pic2"],
+      },
+    ];
+    res.send(a);
   } catch (err) {
     next(err);
   }
