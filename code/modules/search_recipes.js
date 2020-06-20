@@ -2,9 +2,9 @@ const axios = require("axios"); //support promises
 // sponcular settings
 const recipes_api_url = "https://api.spoonacular.com/recipes";
 // A secret --> should be in .env file
-const api_key = "apiKey=4f9444f80338423aac1d613bc207564c";
+// const api_key = "apiKey=4f9444f80338423aac1d613bc207564c";
 // const api_key = "apiKey=cac138d6087c4411b1c42232e6689678";
-// const api_key = "apiKey=9dfadfa642a74094836f8a3d38d80db2";
+const api_key = "apiKey=9dfadfa642a74094836f8a3d38d80db2";
 const profile_utils = require("./profile_utils");
 const DButils = require("./DButils");
 
@@ -271,14 +271,15 @@ function SplitIngredients(ingredientsData) {
 // function that return info about the recipes - preview info + instructions
 function previewViewDataIncludeInstruction(recipes_Info) {
   try {
-    let dic = {};
-    recipes_Info.map((recipe_info) => {
+    // let dic = {};
+    return recipes_Info.map((recipe_info) => {
       let instructions = "";
       if (recipe_info.data.instructions != "") {
         instructions = SplitInstructions(recipe_info.data.analyzedInstructions);
       }
 
-      var inside = {
+      return {
+        id: recipe_info.data.id,
         image: recipe_info.data.image,
         title: recipe_info.data.title,
         readyInMinutes: recipe_info.data.readyInMinutes,
@@ -290,11 +291,11 @@ function previewViewDataIncludeInstruction(recipes_Info) {
         // cuisine: recipe_info.data.cuisines,
       };
 
-      var recipeId = recipe_info.data.id;
-      dic[recipeId] = new Object();
-      dic[recipeId] = inside;
+      // var recipeId = recipe_info.data.id;
+      // dic[recipeId] = new Object();
+      // dic[recipeId] = inside;
     });
-    return dic;
+    // return dic;
   } catch (err) {
     throw {
       status: err.status || 404,
@@ -314,7 +315,7 @@ function fullViewData(recipe_Info, req) {
       }
     });
 
-    let dic = {};
+    // let dic = {};
 
     let instructions = "";
     if (recipe_Info.data.instructions != "") {
@@ -325,7 +326,8 @@ function fullViewData(recipe_Info, req) {
       ingredients = SplitIngredients(recipe_Info.data.extendedIngredients);
     }
 
-    var inside = {
+    return {
+      id: recipe_Info.data.id,
       image: recipe_Info.data.image,
       title: recipe_Info.data.title,
       readyInMinutes: recipe_Info.data.readyInMinutes,
@@ -338,10 +340,10 @@ function fullViewData(recipe_Info, req) {
       servings: recipe_Info.data.servings,
     };
 
-    var recipeId = recipe_Info.data.id;
-    dic[recipeId] = new Object();
-    dic[recipeId] = inside;
-    return dic;
+    // var recipeId = recipe_Info.data.id;
+    // dic[recipeId] = new Object();
+    // dic[recipeId] = inside;
+    // return dic;
   } catch (err) {
     throw {
       status: err.status || 404,
@@ -376,9 +378,10 @@ function previewViewDataForOneRecipe(recipe_Info) {
 
 // function that return priview info about the recipes
 function previewViewData(recipes_Info) {
-  let dic = {};
-  recipes_Info.map((recipe_info) => {
+  // let dic = [];
+  return recipes_Info.map((recipe_info) => {
     const {
+      id,
       image,
       title,
       readyInMinutes,
@@ -388,7 +391,8 @@ function previewViewData(recipes_Info) {
       glutenFree,
     } = recipe_info.data;
 
-    var inside = {
+    return {
+      id: id,
       image: image,
       title: title,
       readyInMinutes: readyInMinutes,
@@ -397,14 +401,8 @@ function previewViewData(recipes_Info) {
       vegan: vegan,
       glutenFree: glutenFree,
     };
-
-    var recipeId = recipe_info.data.id;
-    dic[recipeId] = new Object();
-    dic[recipeId] = inside;
-
-    // return { [recipeId]: inside };
   });
-  return dic;
+  // return dic;
 }
 
 function previewViewDataForProfile(recipes_Info) {

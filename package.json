@@ -1,6 +1,7 @@
 {
   "name": "assignment-3-2-311322077-206015141",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "node code/main.js",
@@ -9,6 +10,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "client-sessions": "^0.8.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -19,14 +21,5 @@
   "devDependencies": {},
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edenmizrahi/Recipes.git"
-  },
-  "bugs": {
-    "url": "https://github.com/edenmizrahi/Recipes/issues"
-  },
-  "homepage": "https://github.com/edenmizrahi/Recipes#readme",
-  "description": ""
+  "license": "ISC"
 }
