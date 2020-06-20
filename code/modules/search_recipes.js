@@ -29,7 +29,8 @@ async function searchForSpecificRecipe(search_param, param, req) {
     if (param == "full") {
       info_recipe = await getRecipeInfo(search_param.recipeId, "full", req);
       console.log("Info_array: ", info_recipe);
-    } else {
+    } 
+    else {
       info_recipe = await getRecipeInfo(search_param.recipeId, "preview", req);
       console.log("Info_array: ", info_recipe);
     }
