@@ -55,42 +55,42 @@ router.get("/random", async (req, res) => {
     search_params.instructionsRequired = true;
 
     //search the recipe
-    // info_array = [
-    //   {
-    //     id: 635342,
-    //     image: "https://spoonacular.com/recipeImages/635342-556x370.jpg",
-    //     title: "BLT Sandwich",
-    //     readyInMinutes: 45,
-    //     aggregateLikes: 63,
-    //     vegetarian: false,
-    //     vegan: false,
-    //     glutenFree: false,
-    //   },
-    //   {
-    //     id: 653371,
-    //     image: "https://spoonacular.com/recipeImages/653371-556x370.jpg",
-    //     title: "Nutella Stuffed French Toast",
-    //     readyInMinutes: 45,
-    //     aggregateLikes: 15,
-    //     vegetarian: true,
-    //     vegan: false,
-    //     glutenFree: false,
-    //   },
-    //   {
-    //     id: 715523,
-    //     image: "https://spoonacular.com/recipeImages/715523-556x370.jpg",
-    //     title: "Chorizo and Beef Quinoa Stuffed Pepper",
-    //     readyInMinutes: 30,
-    //     aggregateLikes: 1254,
-    //     vegetarian: false,
-    //     vegan: false,
-    //     glutenFree: true,
-    //   },
-    // ];
-    info_array = await search_functions.searchForRecipes(
-      search_params,
-      "random"
-    );
+    info_array = [
+      {
+        id: 635342,
+        image: "https://spoonacular.com/recipeImages/635342-556x370.jpg",
+        title: "BLT Sandwich",
+        readyInMinutes: 45,
+        aggregateLikes: 63,
+        vegetarian: false,
+        vegan: false,
+        glutenFree: false,
+      },
+      {
+        id: 653371,
+        image: "https://spoonacular.com/recipeImages/653371-556x370.jpg",
+        title: "Nutella Stuffed French Toast",
+        readyInMinutes: 45,
+        aggregateLikes: 15,
+        vegetarian: true,
+        vegan: false,
+        glutenFree: false,
+      },
+      {
+        id: 715523,
+        image: "https://spoonacular.com/recipeImages/715523-556x370.jpg",
+        title: "Chorizo and Beef Quinoa Stuffed Pepper",
+        readyInMinutes: 30,
+        aggregateLikes: 1254,
+        vegetarian: false,
+        vegan: false,
+        glutenFree: true,
+      },
+    ];
+    // info_array = await search_functions.searchForRecipes(
+    //   search_params,
+    //   "random"
+    // );
     res.send(info_array);
     // search_functions
     //   .searchForRecipes(search_params, "random")
@@ -115,78 +115,78 @@ router.get("/displayRecipePage/recipeId/:id", async (req, res) => {
 
     //search the recipe
     info_recipe = {
-      "id": 635342,
-      "image": "https://spoonacular.com/recipeImages/635342-556x370.jpg",
-      "title": "BLT Sandwich",
-      "readyInMinutes": 45,
-      "aggregateLikes": 63,
-      "vegetarian": false,
-      "vegan": false,
-      "glutenFree": false,
-      "ingredients": [
-          {
-              "name": "bell pepper",
-              "amount": 2,
-              "unit": "servings"
-          },
-          {
-              "name": "bread",
-              "amount": 4,
-              "unit": "pieces"
-          },
-          {
-              "name": "lettuce",
-              "amount": 2,
-              "unit": "servings"
-          },
-          {
-              "name": "mayonnaise",
-              "amount": 2,
-              "unit": "servings"
-          },
-          {
-              "name": "thick-cut bacon",
-              "amount": 8,
-              "unit": "pieces"
-          },
-          {
-              "name": "tomato",
-              "amount": 1,
-              "unit": ""
-          }
+      id: 635342,
+      image: "https://spoonacular.com/recipeImages/635342-556x370.jpg",
+      title: "BLT Sandwich",
+      readyInMinutes: 45,
+      aggregateLikes: 63,
+      vegetarian: false,
+      vegan: false,
+      glutenFree: false,
+      ingredients: [
+        {
+          name: "bell pepper",
+          amount: 2,
+          unit: "servings",
+        },
+        {
+          name: "bread",
+          amount: 4,
+          unit: "pieces",
+        },
+        {
+          name: "lettuce",
+          amount: 2,
+          unit: "servings",
+        },
+        {
+          name: "mayonnaise",
+          amount: 2,
+          unit: "servings",
+        },
+        {
+          name: "thick-cut bacon",
+          amount: 8,
+          unit: "pieces",
+        },
+        {
+          name: "tomato",
+          amount: 1,
+          unit: "",
+        },
       ],
-      "instructions": [
-          {
-              "number": 1,
-              "step": "Brown bacon in a skillet"
-          },
-          {
-              "number": 2,
-              "step": "Remove and pat off excess oil"
-          },
-          {
-              "number": 3,
-              "step": "Slice tomato into 1/4 inches slices"
-          },
-          {
-              "number": 4,
-              "step": "Toast bread"
-          },
-          {
-              "number": 5,
-              "step": "Spread a thin layer of mayonnaise on bread"
-          },
-          {
-              "number": 6,
-              "step": "Layer all ingredients on bread and close sandwich"
-          },
-          {
-              "number": 7,
-              "step": "Add fresh cracked black pepper"
-          }
+      instructions: [
+        {
+          number: 1,
+          step: "Brown bacon in a skillet",
+        },
+        {
+          number: 2,
+          step: "Remove and pat off excess oil",
+        },
+        {
+          number: 3,
+          step: "Slice tomato into 1/4 inches slices",
+        },
+        {
+          number: 4,
+          step: "Toast bread",
+        },
+        {
+          number: 5,
+          step: "Spread a thin layer of mayonnaise on bread",
+        },
+        {
+          number: 6,
+          step: "Layer all ingredients on bread and close sandwich",
+        },
+        {
+          number: 7,
+          step: "Add fresh cracked black pepper",
+        },
       ],
-      "servings": 2
-  };
+      servings: 2,
+    };
     // info_recipe = await search_functions.searchForSpecificRecipe(
     //   search_param,
     //   "full",
