@@ -376,9 +376,10 @@ function previewViewDataForOneRecipe(recipe_Info) {
 
 // function that return priview info about the recipes
 function previewViewData(recipes_Info) {
-  let dic = {};
-  recipes_Info.map((recipe_info) => {
+  // let dic = [];
+  return recipes_Info.map((recipe_info) => {
     const {
+      id,
       image,
       title,
       readyInMinutes,
@@ -388,7 +389,8 @@ function previewViewData(recipes_Info) {
       glutenFree,
     } = recipe_info.data;
 
-    var inside = {
+    return {
+      id: id,
       image: image,
       title: title,
       readyInMinutes: readyInMinutes,
@@ -397,14 +399,8 @@ function previewViewData(recipes_Info) {
       vegan: vegan,
       glutenFree: glutenFree,
     };
-
-    var recipeId = recipe_info.data.id;
-    dic[recipeId] = new Object();
-    dic[recipeId] = inside;
-
-    // return { [recipeId]: inside };
   });
-  return dic;
+  // return dic;
 }
 
 function previewViewDataForProfile(recipes_Info) {
