@@ -76,7 +76,7 @@ router.put("/watchedList/add/:id", async (req, res) => {
   try {
     a = [];
     a.push(Number(req.params.id));
-    r = await search_functions.getRecipesPreviewInfo(a);
+    // r = await search_functions.getRecipesPreviewInfo(a);
     await profile_utils.addToWatchList(req.user, req.params.id);
     res.send("succes");
   } catch (err) {
