@@ -19,6 +19,7 @@ app.use(
     activeDuration: 0, // if expiresIn < activeDuration,
     //the session will be extended by activeDuration milliseconds
     cookie: {
+      //new
       httpOnly: false,
     },
   })
