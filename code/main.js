@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 //#region express configures
 var express = require("express");
@@ -18,6 +19,9 @@ app.use(
     duration: 20 * 60 * 1000, // expired after
     activeDuration: 0, // if expiresIn < activeDuration,
     //the session will be extended by activeDuration milliseconds
+    cookie: {
+      httpOnly:false 
+    }
   })
 );
 app.use(express.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
