@@ -1,4 +1,3 @@
-
 require("dotenv").config();
 //#region express configures
 var express = require("express");
@@ -14,17 +13,16 @@ app.use(logger("dev")); //logger
 app.use(express.json()); // parse application/json
 app.use(
   session({
-    cookieName: process.env.COOKIE_NAME, // the cookie key name
+    cookieName: "session", // the cookie key name
     secret: process.env.COOKIE_SECRET, // the encryption key
-    duration: 20 * 60 * 1000, // expired after 20 min
+    duration: 20 * 60 * 1000, // expired after
     activeDuration: 0, // if expiresIn < activeDuration,
     //the session will be extended by activeDuration milliseconds
     cookie: {
-      httpOnly:false 
-    }
+      httpOnly: false,
+    },
   })
 );
-
 app.use(express.urlencoded({ extended: false })); // parse application/x-www-form-urlencoded
 app.use(express.static(path.join(__dirname, "public"))); //To serve static files such as images, CSS files, and JavaScript files
 
