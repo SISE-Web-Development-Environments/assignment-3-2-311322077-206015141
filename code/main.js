@@ -1,3 +1,4 @@
+
 require("dotenv").config();
 //#region express configures
 var express = require("express");
@@ -19,7 +20,7 @@ app.use(
     activeDuration: 0, // if expiresIn < activeDuration,
     //the session will be extended by activeDuration milliseconds
     cookie: {
-      epemeral: false, //
+      // epemeral: false, 
       httpOnly: false,
     },
   })
