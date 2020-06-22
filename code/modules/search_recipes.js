@@ -4,7 +4,12 @@ const recipes_api_url = "https://api.spoonacular.com/recipes";
 // A secret --> should be in .env file
 // const api_key = "apiKey=4f9444f80338423aac1d613bc207564c";
 // const api_key = "apiKey=cac138d6087c4411b1c42232e6689678";
-const api_key = "apiKey=9dfadfa642a74094836f8a3d38d80db2";
+// const api_key = "apiKey=9dfadfa642a74094836f8a3d38d80db2";
+// const api_key = "apiKey=21ff8ee248bb409880c7b1d7a203429c";
+// const api_key = "apiKey=8ff8c08396a6493cbf1902a961c76d1e";
+// const api_key = "apiKey=50553d92c4c440cfa5e12a0e40d9cd1d";
+const api_key = "apiKey=83a7acea9f124aa5b7535c70d4a81a1f";
+
 const profile_utils = require("./profile_utils");
 const DButils = require("./DButils");
 
@@ -312,6 +317,7 @@ function fullViewData(recipe_Info, req) {
         user = users.find((x) => x.user_id === req.session.user_id);
         username = user.username;
         profile_utils.addToWatchList(username, recipe_Info.data.id);
+        console.log("recipe:" + recipe_Info.data.id + "added to watchList");
       }
     });
 
