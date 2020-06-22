@@ -14,6 +14,7 @@ const recipes_api_url = "https://api.spoonacular.com/recipes";
 const api_key = "apiKey=10a68f4638834297b6788cbc717fa9ca";
 // const api_key = "apiKey=4ed89855f8534600804c6a0c97cdc89e";
 // const api_key = "apiKey=809375d95b1d49e2844ba605fc38905f";
+// const api_key = "apiKey=15513adfe3d64fb39e478710bf468ea1";
 
 const profile_utils = require("./profile_utils");
 const DButils = require("./DButils");
@@ -403,7 +404,7 @@ function previewViewData(recipes_Info) {
     } = recipe_info.data;
 
     return {
-      id: id,
+      recipe_id: id,
       image: image,
       title: title,
       readyInMinutes: readyInMinutes,
