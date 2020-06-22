@@ -76,7 +76,7 @@ router.put("/watchedList/add/:id", async (req, res) => {
   try {
     a = [];
     a.push(Number(req.params.id));
-    r = await search_functions.getRecipesPreviewInfo(a);
+    // r = await search_functions.getRecipesPreviewInfo(a);
     await profile_utils.addToWatchList(req.user, req.params.id);
     res.send("succes");
   } catch (err) {
@@ -134,7 +134,8 @@ get recipe from  my family recipe
 router.get("/familyRecipes", async (req, res, next) => {
   try {
     resul = await profile_utils.getMyRecipes(req.user, "family");
-    res.send(JSON.stringify(resul));
+    // res.send(JSON.stringify(resul));
+    res.send(resul);
   } catch (err) {
     next(err);
   }
@@ -196,44 +197,44 @@ router.put("/familyRecipes/add", async (req, res, next) => {
 
 router.get("/familyRecipes/:ids", async (req, res, next) => {
   try {
-    // idaArray = JSON.parse(req.params.ids);
-    // promises = [];
-    // idaArray.map((id) => {
-    //   promises.push(
-    //     profile_utils.getPersonalRecipesFullDetails(req.user, id, "family")
-    //   );
-    // });
-    // result = await Promise.all(promises);
+    idaArray = JSON.parse(req.params.ids);
+    promises = [];
+    idaArray.map((id) => {
+      promises.push(
+        profile_utils.getPersonalRecipesFullDetails(req.user, id, "family")
+      );
+    });
+    result = await Promise.all(promises);
     // c= JSON.stringify(result);
-    // res.send(JSON.stringify(result));
-    a = [
-      {
-        recipe_id: 111,
-        title: "coscos",
-        image: "slkd",
-        duration: 10,
-        vegetarians: true,
-        vegan: true,
-        glutenFree: false,
-        ingredients: [
-          {
-            name: "cofee",
-            amount: 1,
-            unit: "cup",
-          },
-        ],
-        instructions: [
-          {
-            number: "1",
-            content: "take the milk",
-          },
-        ],
-        owner: "mother",
-        where: "kidush",
-        pictures: ["pic1"],
-      },
-    ];
-    res.send(a);
+    res.send(result);
+    // a = [
+    //   {
+    //     recipe_id: 111,
+    //     title: "coscos",
+    //     image: "slkd",
+    //     duration: 10,
+    //     vegetarians: true,
+    //     vegan: true,
+    //     glutenFree: false,
+    //     ingredients: [
+    //       {
+    //         name: "cofee",
+    //         amount: 1,
+    //         unit: "cup",
+    //       },
+    //     ],
+    //     instructions: [
+    //       {
+    //         number: "1",
+    //         content: "take the milk",
+    //       },
+    //     ],
+    //     owner: "mother",
+    //     where: "kidush",
+    //     pictures: ["pic1"],
+    //   },
+    // ];
+    // res.send(a);
   } catch (err) {
     next(err);
   }
