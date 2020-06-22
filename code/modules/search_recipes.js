@@ -2,14 +2,14 @@ const axios = require("axios"); //support promises
 // sponcular settings
 const recipes_api_url = "https://api.spoonacular.com/recipes";
 // A secret --> should be in .env file
-// const api_key = "apiKey=4f9444f80338423aac1d613bc207564c";
+const api_key = "apiKey=10a6e2d5037e4c84b5408f26263b8583";
 // const api_key = "apiKey=cac138d6087c4411b1c42232e6689678";
 // const api_key = "apiKey=9dfadfa642a74094836f8a3d38d80db2";
 // const api_key = "apiKey=21ff8ee248bb409880c7b1d7a203429c";
 // const api_key = "apiKey=8ff8c08396a6493cbf1902a961c76d1e";
 // const api_key = "apiKey=50553d92c4c440cfa5e12a0e40d9cd1d";
-const api_key = "apiKey=15513adfe3d64fb39e478710bf468ea1";
-
+// const api_key = "apiKey=15513adfe3d64fb39e478710bf468ea1";
+// const api_key = "apiKey=2f8c014770914f2e8dd9224ea9cc431e";
 const profile_utils = require("./profile_utils");
 const DButils = require("./DButils");
 
