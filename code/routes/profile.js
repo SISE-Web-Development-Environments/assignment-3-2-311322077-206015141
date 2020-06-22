@@ -33,22 +33,11 @@ router.get("/recipeInfo/:ids", async (req, res, next) => {
   try {
     const recipes_ids_list = JSON.parse(req.params.ids);
     r = await search_functions.getRecipesPreviewInfo(recipes_ids_list);
-    profile_utils
-      .getRecipeProfileInfo(req.user, recipes_ids_list)
-      .then((theResult) => {
-        res.send(theResult[0]);
-      })
-      // console.log(req.params.ids);
-      // a = {
-      //   "635342": {
-      //     watched: true,
-      //     saved: false,
-      //   },
-      // };
-      // res.send(a).
-      .catch((err) => {
-        throw { status: err.status, message: err.message };
-      });
+    let theResult = await profile_utils.getRecipeProfileInfo(
+      req.user,
+      recipes_ids_list
+    );
+    res.send(theResult[0]);
   } catch (err) {
     next(err);
   }
