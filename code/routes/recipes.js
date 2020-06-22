@@ -57,7 +57,7 @@ router.get("/random", async (req, res) => {
     // search the recipe
     info_array = [
       {
-        id: 635342,
+        recipe_id: 635342,
         image: "https://spoonacular.com/recipeImages/635342-556x370.jpg",
         title: "BLT Sandwich",
         readyInMinutes: 45,
@@ -67,7 +67,7 @@ router.get("/random", async (req, res) => {
         glutenFree: false,
       },
       {
-        id: 653371,
+        recipe_id: 653371,
         image: "https://spoonacular.com/recipeImages/653371-556x370.jpg",
         title: "Nutella Stuffed French Toast",
         readyInMinutes: 45,
@@ -77,7 +77,7 @@ router.get("/random", async (req, res) => {
         glutenFree: false,
       },
       {
-        id: 715523,
+        recipe_id: 715523,
         image: "https://spoonacular.com/recipeImages/715523-556x370.jpg",
         title: "Chorizo and Beef Quinoa Stuffed Pepper",
         readyInMinutes: 30,

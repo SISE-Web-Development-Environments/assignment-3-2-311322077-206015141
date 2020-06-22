@@ -2,7 +2,7 @@ const axios = require("axios"); //support promises
 // sponcular settings
 const recipes_api_url = "https://api.spoonacular.com/recipes";
 // A secret --> should be in .env file
-const api_key = "apiKey=10a6e2d5037e4c84b5408f26263b8583";
+// const api_key = "apiKey=10a6e2d5037e4c84b5408f26263b8583";
 // const api_key = "apiKey=cac138d6087c4411b1c42232e6689678";
 // const api_key = "apiKey=9dfadfa642a74094836f8a3d38d80db2";
 // const api_key = "apiKey=21ff8ee248bb409880c7b1d7a203429c";
@@ -11,8 +11,8 @@ const api_key = "apiKey=10a6e2d5037e4c84b5408f26263b8583";
 // const api_key = "apiKey=83a7acea9f124aa5b7535c70d4a81a1f";
 // const api_key = "apiKey=570ceb4a1f7d48579de979759c6b5139";
 // const api_key = "apiKey=1715127261a2434bae64f2221354c986";
-const api_key = "apiKey=10a68f4638834297b6788cbc717fa9ca";
-// const api_key = "apiKey=4ed89855f8534600804c6a0c97cdc89e";
+// const api_key = "apiKey=10a68f4638834297b6788cbc717fa9ca";
+const api_key = "apiKey=4ed89855f8534600804c6a0c97cdc89e";
 // const api_key = "apiKey=809375d95b1d49e2844ba605fc38905f";
 // const api_key = "apiKey=15513adfe3d64fb39e478710bf468ea1";
 

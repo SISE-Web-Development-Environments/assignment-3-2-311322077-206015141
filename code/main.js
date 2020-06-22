@@ -11,6 +11,8 @@ const cors = require("cors");
 var app = express();
 app.use(logger("dev")); //logger
 app.use(express.json()); // parse application/json
+
+app.enable("trust proxy");
 app.use(
   session({
     cookieName: "session", // the cookie key name
@@ -19,7 +21,6 @@ app.use(
     activeDuration: 0, // if expiresIn < activeDuration,
     //the session will be extended by activeDuration milliseconds
     cookie: {
-      //new
       httpOnly: false,
     },
   })
