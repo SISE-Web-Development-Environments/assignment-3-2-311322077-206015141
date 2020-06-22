@@ -8,7 +8,12 @@ const recipes_api_url = "https://api.spoonacular.com/recipes";
 // const api_key = "apiKey=21ff8ee248bb409880c7b1d7a203429c";
 // const api_key = "apiKey=8ff8c08396a6493cbf1902a961c76d1e";
 // const api_key = "apiKey=50553d92c4c440cfa5e12a0e40d9cd1d";
-const api_key = "apiKey=83a7acea9f124aa5b7535c70d4a81a1f";
+// const api_key = "apiKey=83a7acea9f124aa5b7535c70d4a81a1f";
+// const api_key = "apiKey=570ceb4a1f7d48579de979759c6b5139";
+// const api_key = "apiKey=1715127261a2434bae64f2221354c986";
+const api_key = "apiKey=10a68f4638834297b6788cbc717fa9ca";
+// const api_key = "apiKey=4ed89855f8534600804c6a0c97cdc89e";
+// const api_key = "apiKey=809375d95b1d49e2844ba605fc38905f";
 
 const profile_utils = require("./profile_utils");
 const DButils = require("./DButils");
