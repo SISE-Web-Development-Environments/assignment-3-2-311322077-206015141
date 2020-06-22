@@ -1,7 +1,7 @@
 CREATE TABLE [dbo].[personalRecipes](
     [recipe_id] INT NOT NULL ,
 	[username] [varchar](30)  FOREIGN KEY REFERENCES users(username),
-	[image] [varchar](30)  ,
+	[image] [varchar](3000)  ,
     [title] [varchar](3000) ,
     [duration] [int] ,
     [Vegetarians] [int],
