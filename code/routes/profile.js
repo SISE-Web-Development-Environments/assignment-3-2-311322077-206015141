@@ -134,7 +134,8 @@ get recipe from  my family recipe
 router.get("/familyRecipes", async (req, res, next) => {
   try {
     resul = await profile_utils.getMyRecipes(req.user, "family");
-    res.send(JSON.stringify(resul));
+    // res.send(JSON.stringify(resul));
+    res.send(resul);
   } catch (err) {
     next(err);
   }
