@@ -35,6 +35,8 @@ async function getProfileInfoRcipes(id, username) {
     user_recipe_details = await DButils.execQuery(
       `SELECT * FROM users_recipes WHERE username='${username}' AND recipe_id='${id}'`
     );
+    console.log(12345, user_recipe_details[0]);
+
     return user_recipe_details[0];
   } else {
     newId = await getNextId();
@@ -44,6 +46,13 @@ async function getProfileInfoRcipes(id, username) {
     user_recipe_details = await DButils.execQuery(
       `SELECT * FROM users_recipes WHERE username='${username}' AND recipe_id='${id}'`
     );
+
+    // let dic = {};
+    // dic.recipe_id = id;
+    // dic.username = username;
+    // dic.watched_in = 0;
+    // dic.favorite_in = 0;
+    // console.log(12345, user_recipe_details[0]);
     return user_recipe_details[0];
   }
 }
@@ -162,8 +171,8 @@ async function getPersonalRecipesPrevDetails(rid) {
   res.recipe_id = generalINFO[0].recipe_id;
   res.title = generalINFO[0].title;
   res.image = generalINFO[0].image;
-  res.duration = generalINFO[0].duration;
-  res.vegetarians = generalINFO[0].Vegetarians == 1 ? true : false;
+  res.readyInMinutes = generalINFO[0].duration;
+  res.vegetarian = generalINFO[0].Vegetarians == 1 ? true : false;
   res.vegan = generalINFO[0].Vegan == 1 ? true : false;
   res.glutenFree = generalINFO[0].glutenFree == 1 ? true : false;
 
@@ -293,8 +302,8 @@ async function getPersonalRecipesFullDetails(username, rid, familyOrMy) {
     res.recipe_id = generalINFO[0].recipe_id;
     res.title = generalINFO[0].title;
     res.image = generalINFO[0].image;
-    res.duration = generalINFO[0].duration;
-    res.vegetarians = generalINFO[0].Vegetarians == 0 ? false : true;
+    res.readyInMinutes = generalINFO[0].duration;
+    res.vegetarian = generalINFO[0].Vegetarians == 0 ? false : true;
     res.vegan = generalINFO[0].Vegan == 0 ? false : true;
     res.glutenFree = generalINFO[0].glutenFree == 0 ? false : true;
     res.ingredients = ingredientsOfRec;
@@ -310,8 +319,8 @@ async function getPersonalRecipesFullDetails(username, rid, familyOrMy) {
     res.recipe_id = generalINFO[0].recipe_id;
     res.title = generalINFO[0].title;
     res.image = generalINFO[0].image;
-    res.duration = generalINFO[0].duration;
-    res.vegetarians = generalINFO[0].Vegetarians == 0 ? false : true;
+    res.readyInMinutes = generalINFO[0].duration;
+    res.vegetarian = generalINFO[0].Vegetarians == 0 ? false : true;
     res.vegan = generalINFO[0].Vegan == 0 ? false : true;
     res.glutenFree = generalINFO[0].glutenFree == 0 ? false : true;
     res.ingredients = ingredientsOfRec;

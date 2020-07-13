@@ -32,7 +32,7 @@ router.use((req, res, next) => {
 router.get("/recipeInfo/:ids", async (req, res, next) => {
   try {
     const recipes_ids_list = JSON.parse(req.params.ids);
-    r = await search_functions.getRecipesPreviewInfo(recipes_ids_list);
+    // r = await search_functions.getRecipesPreviewInfo(recipes_ids_list);
     let theResult = await profile_utils.getRecipeProfileInfo(
       req.user,
       recipes_ids_list
