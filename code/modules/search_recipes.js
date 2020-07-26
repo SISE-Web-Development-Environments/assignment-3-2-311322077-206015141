@@ -14,7 +14,7 @@ const recipes_api_url = "https://api.spoonacular.com/recipes";
 // const api_key = "apiKey=10a68f4638834297b6788cbc717fa9ca";
 // const api_key = "apiKey=4ed89855f8534600804c6a0c97cdc89e";
 // const api_key = "apiKey=92fa14691dbe4273bb1473fc2eb279b9";
-// const api_key = "apiKey=4ed89855f8534600804c6a0c97cdc89e";
+// const api_key = "apiKey=8fb22e3989d34e28b597e76b171b31e9";
 // const api_key = "apiKey=809375d95b1d49e2844ba605fc38905f";
 // const api_key = "apiKey=15513adfe3d64fb39e478710bf468ea1";
 // const api_key = "apiKey=5a9ecc80609a4fb8aa20807923e61fe4";
@@ -22,20 +22,18 @@ const recipes_api_url = "https://api.spoonacular.com/recipes";
 // const api_key = "apiKey=6df36224e234424aa86a64923e8aed5a";
 // const api_key = "apiKey=abc98bfb3d824fd8891dd6458ff34418";
 // const api_key = "apiKey=2dd28b68de7849ee9eb2fa5e60ab2091";
-// const api_key = "apiKey=e5f3091b7e4b4f74a384a46f8d9cc5ac";
+// const api_key = "apiKey=b0d102923ce04d3693c3d590a32f6252";
 // const api_key = "apiKey=b6a75df525ad42c8b30ddb17ee8c179d";
 // const api_key = "apiKey=4d476ebc926a44e082fa0d75012711ac";
 // const api_key = "apiKey=43f2300694f94762bf5f25e5f7022626";
-
-// const api_key = "apiKey=356ceec98b3348ffad03841132d44f6a";
+// const api_key = "apiKey=44a333f50c7e469b91548392d51662c8";
 // const api_key = "apiKey=3a76eacae44141e6bda4eb2f13bb0a5b";
 // const api_key = "apiKey=caa99fb98d874f858260825897397002";
 // const api_key = "apiKey=d08f78a99d1043478d4f8aef48c5f25b";
 // const api_key = "apiKey=0b99b6b23b734a34aab3d395e6aad8e2";
-// const api_key = "apiKey=264c504e82a04e6c81cb9e1ad544a7fe";
+const api_key = "apiKey=4b60a0633cd14a7bb9208ae3f41f6a0b";
 // const api_key = "apiKey=c4995f5133ea4c2cafe58a075e46ca9a";
-const api_key = "apiKey=fd469f6cd1d645cfaf2601855c0b970d";
-
+// const api_key = "apiKey=95121bc6c6794398a2e42646c642783b";
 
 const profile_utils = require("./profile_utils");
 const DButils = require("./DButils");
@@ -67,7 +65,7 @@ async function searchForSpecificRecipe(search_param, param, req) {
     }
     return info_recipe;
   } catch (err) {
-    throw { status: 404, message: "No reciepes found for the search params." };
+    throw { status: 404, message: "recipe not found at api" };
   }
 }
 
@@ -205,7 +203,7 @@ async function getRecipesPreviewInfoForProfile(recipes_id_list) {
     relevantRecipesData = previewViewDataForProfile(info_response1);
     return relevantRecipesData;
   } catch (err) {
-    throw { status: 404, message: "recipe not found" };
+    throw { status: 404, message: "recipe not found at api" };
   }
 }
 
